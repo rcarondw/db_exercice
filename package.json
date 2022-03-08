@@ -1,0 +1,21 @@
+{
+  "name": "db_exercice",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rcarondw/db_exercice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rcarondw/db_exercice/issues"
+  },
+  "homepage": "https://github.com/rcarondw/db_exercice#readme"
+}

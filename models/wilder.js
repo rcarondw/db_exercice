@@ -13,6 +13,9 @@ const WilderSchema = new Schema(
       type: String,
       required: [true, "La ville est requise !"],
     },
+    description: {
+      type: String,
+    },
     skills: [
       {
         title: String,

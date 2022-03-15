@@ -9,5 +9,12 @@ export const listErrors = (err) => {
       errors = { ...errors, [key]: `${key} existe déjà` };
     });
 
+  if (err.kind && err.kind === "ObjectId") {
+    errors = {
+      ...errors,
+      objectid: "Cet identifiant n'est pas un ObjectId valide",
+    };
+  }
+
   return errors;
 };

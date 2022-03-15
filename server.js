@@ -2,7 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import { wilderValidation } from "./middlewares/index.js";
-import wilderController from "./controllers/wilder.js";
+import wilderController from "./controllers/wilder";
 
 dotenv.config();
 

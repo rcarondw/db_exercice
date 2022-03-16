@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.listErrors = (err) => {
+exports.listErrors = void 0;
+const listErrors = (err) => {
     let errors = {};
     err.errors &&
         Object.keys(err.errors).map((key) => {
@@ -12,3 +13,4 @@ exports.listErrors = (err) => {
         });
     return errors;
 };
+exports.listErrors = listErrors;

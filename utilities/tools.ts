@@ -1,4 +1,4 @@
-export const listErrors = (err) => {
+export const listErrors = (err: any) => {
   let errors = {};
   err.errors &&
     Object.keys(err.errors).map((key) => {

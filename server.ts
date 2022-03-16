@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import { wilderValidation } from "./middlewares/index.js";
 import wilderController from "./controllers/wilder";
+import { Request, Response } from "express";
 
 dotenv.config();
 
@@ -17,8 +18,8 @@ mongoose
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("i am working");
+app.get("/", (req: Request, res: Response) => {
+  res.send("i am working jeanmi");
 });
 
 app.post(

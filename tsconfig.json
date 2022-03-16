@@ -6,8 +6,12 @@
     "checkJs": true /* Report errors in .js files. */,
     "outDir": "./dist" /* Redirect output structure to the directory. */,
     "rootDir": "./" /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */,
+    "moduleResolution": "node",
     "strict": false /* Enable all strict type-checking options. */,
     "esModuleInterop": true /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */,
-    "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
-  }
+    "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */,
+    "skipLibCheck": true
+  },
+  "include": ["./**/*"],
+  "typeRoots": ["./node_module/@types", "./global.d.ts"]
 }

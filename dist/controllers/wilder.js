@@ -23,7 +23,7 @@ exports.default = {
                 .catch((err) => {
                 res.status(400).json({
                     success: false,
-                    result: tools_js_1.listErrors(err),
+                    result: (0, tools_js_1.listErrors)(err),
                 });
             });
         });
@@ -39,7 +39,7 @@ exports.default = {
             .catch((err) => {
             res.status(400).json({
                 success: false,
-                result: tools_js_1.listErrors(err),
+                result: (0, tools_js_1.listErrors)(err),
             });
         });
     },
@@ -61,7 +61,7 @@ exports.default = {
             .catch((err) => {
             res.status(400).json({
                 success: false,
-                result: tools_js_1.listErrors(err),
+                result: (0, tools_js_1.listErrors)(err),
             });
         });
     },
@@ -90,11 +90,11 @@ exports.default = {
             console.log(err);
             res.status(400).json({
                 success: false,
-                result: tools_js_1.listErrors(err),
+                result: (0, tools_js_1.listErrors)(err),
             });
         });
     },
-    delete: async (req, res, next) => {
+    delete: async (req, res) => {
         const { _id } = req.params;
         await wilder_js_1.default.deleteOne({ _id })
             .then((result) => {
@@ -113,7 +113,7 @@ exports.default = {
             console.log(err);
             res.status(400).json({
                 success: false,
-                result: tools_js_1.listErrors(err),
+                result: (0, tools_js_1.listErrors)(err),
             });
         });
     },

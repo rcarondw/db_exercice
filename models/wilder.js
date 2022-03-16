@@ -8,10 +8,12 @@ const WilderSchema = new Schema(
       type: String,
       unique: true,
       required: [true, "le nom est requis !"],
+      minLength: 4,
     },
     city: {
       type: String,
       required: [true, "La ville est requise !"],
+      minlength: 2,
     },
     description: {
       type: String,

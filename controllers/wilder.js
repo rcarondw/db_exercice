@@ -3,6 +3,7 @@ import { listErrors } from "../utilities/tools.js";
 
 export default {
   create: async (req, res, next) => {
+    console.log("test");
     const { name, city, description, skills } = req.body;
 
     await WilderModel.init().then(() => {
@@ -15,10 +16,12 @@ export default {
       wilder
         .save()
         .then((result) => {
-          res.status(200).json({ success: true, result });
+          console.log(res);
+          return res.status(200).json({ success: true, result });
         })
         .catch((err) => {
-          res.status(400).json({
+          console.log(err);
+          return res.status(400).json({
             success: false,
             result: listErrors(err),
           });

@@ -16,7 +16,7 @@ export const create = [
         errors = { ...errors, [err.param]: err.msg };
       });
 
-      res.json({
+      res.status(400).json({
         success: false,
         result: errors,
       });

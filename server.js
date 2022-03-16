@@ -1,8 +1,8 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import wilderRouter from "./routes/wilder.js";
 import cors from "cors";
+import wilderRouter from "./routes/wilder.js";
 
 dotenv.config();
 const PORT = process.env.PORT || 5002;

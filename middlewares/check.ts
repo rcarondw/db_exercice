@@ -1,4 +1,5 @@
 import { body, validationResult } from "express-validator";
+import { NextFunction, Request, Response } from "express";
 
 export const create = [
   body("name")
@@ -7,12 +8,12 @@ export const create = [
   body("city")
     .isLength({ min: 2 })
     .withMessage("La ville doit avoir au moins 2 caractères"),
-  (req, res, next) => {
-    const errorsValidation = validationResult(req);
+  (req: Request, res: Response, next: NextFunction) => {
+    const errorsValidation: any = validationResult(req);
     if (!errorsValidation.isEmpty()) {
       let errors = {};
 
-      errorsValidation.errors.map((err) => {
+      errorsValidation.errors.map((err: any) => {
         errors = { ...errors, [err.param]: err.msg };
       });
 

@@ -1,10 +1,10 @@
-import WilderModel from "../models/wilder.js";
-import { listErrors } from "../utilities/tools.js";
+import WilderModel from "../models/wilder";
+import { listErrors } from "../utilities/tools";
+import { Request, Response } from "express";
 
 export default {
-  create: async (req, res, next) => {
-    console.log("test");
-    const { name, city, description, skills } = req.body;
+  create: async (req: Request, res: Response) => {
+    const { name, city, description, skills }: any = req.body;
 
     await WilderModel.init().then(() => {
       const wilder = new WilderModel({
@@ -15,13 +15,11 @@ export default {
       });
       wilder
         .save()
-        .then((result) => {
-          console.log(res);
-          return res.status(200).json({ success: true, result });
+        .then((result: object) => {
+          res.status(200).json({ success: true, result });
         })
-        .catch((err) => {
-          console.log(err);
-          return res.status(400).json({
+        .catch((err: object) => {
+          res.status(400).json({
             success: false,
             result: listErrors(err),
           });
@@ -29,7 +27,7 @@ export default {
     });
   },
 
-  getAll: async (req, res) => {
+  getAll: async (req: Request, res: Response) => {
     await WilderModel.find()
       .then((result) => {
         res.status(200).json({
@@ -45,7 +43,7 @@ export default {
       });
   },
 
-  getOne: async (req, res) => {
+  getOne: async (req: Request, res: Response) => {
     const { _id } = req.params;
     await WilderModel.findOne({ _id })
       .then((result) => {
@@ -68,7 +66,7 @@ export default {
       });
   },
 
-  update: async (req, res) => {
+  update: async (req: Request, res: Response) => {
     const { name, city, description, skills } = req.body;
     const { _id } = req.params;
     await WilderModel.updateOne(
@@ -101,7 +99,7 @@ export default {
       });
   },
 
-  delete: async (req, res, next) => {
+  delete: async (req: Request, res: Response) => {
     const { _id } = req.params;
     await WilderModel.deleteOne({ _id })
       .then((result) => {
